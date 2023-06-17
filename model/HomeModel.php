@@ -17,7 +17,7 @@ class HomeModel extends Query
     public function save($nombres, $apellidos, $descripcion, $fecha, $estatus)
     {
         $sql = "INSERT INTO citas(nombres,apellidos,descripcion,fecha,estatus) VALUES(?,?,?,?,?)";
-        $list = array("nombres" => $nombres, "apellidos" => $apellidos, "descripcion" => $descripcion, "fecha" => $fecha, "estatus" => $estatus);
+        $list = array($nombres, $apellidos, $descripcion, $fecha,  $estatus);
         $result = parent::insert($sql, $list);
         return $result;
     }

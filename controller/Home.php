@@ -32,4 +32,26 @@ class Home extends Controller
         echo json_encode($res, JSON_UNESCAPED_UNICODE);
         die();
     }
+
+    public function register()
+    {
+        if (isset($_POST['nombres']) && isset($_POST['apellidos']) && isset($_POST['descripcion']) && isset($_POST['fecha'])) {
+            $nombres = $_POST['nombres'];
+            $apellidos = $_POST['apellidos'];
+            $fecha = $_POST['fecha'];
+            $descripcion = $_POST['descripcion'];
+            if (empty($nombres) || empty($nombres) || empty($nombres) || empty($nombres)) {
+                $res = array("result" => "Falta completar", "type" => "bad");
+            } else {
+                $data = $this->modelo->save($nombres, $apellidos, $descripcion, $fecha, 0);
+                if ($data === 1) {
+                    $res = array("result" => "Registro creado exitosamente", "type" => "ok");
+                } else {
+                    $res = array("result" => "Ha ocurrido un error", "type" => "bad");
+                }
+            }
+            print json_encode($res, JSON_UNESCAPED_UNICODE);
+        }
+        die();
+    }
 }

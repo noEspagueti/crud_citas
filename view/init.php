@@ -25,7 +25,7 @@
                     <input type="text" placeholder="Ingrese nombre" name="nombres" />
                     <input type="text" placeholder="Ingrese apellido" name="apellidos" />
                     <input type="date" name="fecha" />
-                    <textarea id="my-textarea" class="form-control" name="" rows="3" placeholder="Breve descripción" name="descripcion"></textarea>
+                    <textarea id="my-textarea" class="form-control" name="descripcion" rows="3" placeholder="Breve descripción"></textarea>
                     <div class="btn_container">
                         <input type="button" class="btn_cancelar" value="Cancelar" />
                         <button class="btn_register" type="submit">Registrar</button>
