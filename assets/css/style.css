@@ -31,9 +31,9 @@ body {
 
 .registro_container input {
     border: none;
-    color: #fff;
+    color: #0a1630;
     font-weight: 700;
-    background: #6e59ff;
+    background: #8db3ff;
     width: 7em;
     height: 3em;
     padding: 6px;
@@ -55,7 +55,7 @@ body {
 
 th,
 td {
-    border-bottom: 2px solid #6e59ff;
+    border-bottom: 2px solid #8db3ff;
     border-spacing: 0;
     padding: 10px;
     width: 10em;
@@ -73,7 +73,7 @@ tbody tr {
 
 .modal {
     margin: auto;
-    width: 50em;
+    width: 40em;
     height: 25em;
     border-radius: 20px;
     background: #e5edff;
@@ -104,8 +104,10 @@ tbody tr {
 }
 
 
-input[type="text"], input[type="date"] {
-    padding: 10px;;
+input[type="text"],
+input[type="date"] {
+    padding: 10px;
+    ;
 }
 
 form {
@@ -132,7 +134,7 @@ textarea {
 .btn_edit {
     border: none;
     padding: 10px;
-    background: #95f593;
+    background: #2aff1b;
     color: #071738;
     cursor: pointer;
     border-radius: 5px;
@@ -141,37 +143,95 @@ textarea {
 .btn_delete {
     border: none;
     padding: 10px;
-    background: #fc59ff;
+    background: #ff5959;
     color: #fff;
     cursor: pointer;
     border-radius: 5px;
 }
 
 
-.pending{
-    background: #fc59ff;
+.pending {
+    background: #ff5959;
+    color: #071738;
     padding: 5px;
     border-radius: 5px;
+    font-weight: 800;
+}
+
+.fullize {
+    background: #2aff1b;
+    padding: 5px;
+    color: #071738;
+    border-radius: 5px;
+    font-weight: 800;
 }
 
 
-
-.btn_cancelar{
+.btn_cancelar {
     border: none;
     cursor: pointer;
     padding: 10px;
-    background: #fc59ff;
+    background: #ff5959;
     color: #e5edff;
     font-weight: 800;
     border-radius: 10px;
 }
 
-.btn_register{
-     border: none;
-     cursor: pointer;
-     padding: 10px;
-     background: #95f593;
-     color: #071738;
-     font-weight: 800;
-     border-radius: 10px;
+.btn_register {
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    background: #95f593;
+    color: #071738;
+    font-weight: 800;
+    border-radius: 10px;
+}
+
+
+
+
+/* alert */
+
+.alert {
+    width: 20em;
+    height: 4em;
+    border-radius: 20px;
+    background: rgb(199, 255, 215);
+    position: absolute;
+    right: 0;
+    margin: 50px;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    display: none;
+    animation: down 1s ease;
+}
+
+
+.alert>p,
+.alert span {
+    font-weight: 700;
+    color: #071738;
+}
+
+
+
+@keyframes down {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(100px);
+        display: none;
+    }
 }

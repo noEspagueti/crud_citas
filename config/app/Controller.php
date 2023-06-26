@@ -15,6 +15,8 @@ class Controller
         $dirModelo = "model/" . $modelo . ".php";
         if (file_exists($dirModelo)) {
             require_once $dirModelo;
+        }else{
+            return null;
         }
         return new $modelo();
     }

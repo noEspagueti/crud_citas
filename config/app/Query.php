@@ -32,4 +32,20 @@ class Query
         }
         return 0;
     }
+
+    public function update($consulta, $data)
+    {
+        $stm = $this->conectar->prepare($consulta);
+        $result = $stm->execute($data);
+        if ($result) {
+            return 1;
+        }
+        return 0;
+    }
+
+    public function remove($consulta,$data)
+    {
+        $stm = $this->conectar->prepare($consulta);
+        return $stm->execute($data);
+    }
 }

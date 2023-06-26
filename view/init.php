@@ -8,6 +8,7 @@
         </div>
         <table class="table">
             <thead>
+                <th>ID</th>
                 <th>Persona</th>
                 <th>Descripción</th>
                 <th>Fecha</th>
@@ -27,14 +28,23 @@
                     <input type="date" name="fecha" />
                     <textarea id="my-textarea" class="form-control" name="descripcion" rows="3" placeholder="Breve descripción"></textarea>
                     <div class="btn_container">
-                        <input type="button" class="btn_cancelar" value="Cancelar" />
                         <button class="btn_register" type="submit">Registrar</button>
+                        <input type="button" class="btn_cancelar" value="Cancelar" />
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
+
+    <!-- alert -->
+
+    <div class="alert">
+        <span class="material-symbols-outlined">
+            campaign
+        </span>
+        <p>Se ha eliminado correctamente</p>
+    </div>
 
 
     <?php include "./view/templates/foot.php" ?>
