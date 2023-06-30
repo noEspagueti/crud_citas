@@ -2,6 +2,8 @@
 
     <div class="container">
 
+
+        <h2>Citas</h2>
         <!-- botón para registrar -->
         <div class="registro_container">
             <input type="button" value="Registrar" class="btn_registrar">
@@ -15,6 +17,9 @@
                 <th>Estado</th>
                 <th>Acciones</th>
             </thead>
+            <tbody class="tbody">
+
+            </tbody>
         </table>
     </div>
 
@@ -43,7 +48,7 @@
         <span class="material-symbols-outlined">
             campaign
         </span>
-        <p>Se ha eliminado correctamente</p>
+        <p></p>
     </div>
 
 

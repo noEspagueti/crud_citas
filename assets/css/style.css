@@ -3,6 +3,7 @@
 *::before {
     margin: 0;
     box-sizing: border-box;
+    user-select: none;
 }
 
 body {
@@ -107,7 +108,6 @@ tbody tr {
 input[type="text"],
 input[type="date"] {
     padding: 10px;
-    ;
 }
 
 form {
@@ -152,7 +152,7 @@ textarea {
 
 .pending {
     background: #ff5959;
-    color: #071738;
+    color: #ffffff;
     padding: 5px;
     border-radius: 5px;
     font-weight: 800;
@@ -172,7 +172,7 @@ textarea {
     cursor: pointer;
     padding: 10px;
     background: #ff5959;
-    color: #e5edff;
+    color: #ffffff;
     font-weight: 800;
     border-radius: 10px;
 }
@@ -206,7 +206,8 @@ textarea {
     align-items: center;
     gap: 10px;
     display: none;
-    animation: down 1s ease;
+    opacity: 0;
+    animation: down 2s ease;
 }
 
 
@@ -224,14 +225,15 @@ textarea {
         transform: translateY(-100px);
     }
 
-    50% {
+    25% {
         opacity: 1;
         transform: translateY(0);
     }
 
     100% {
+        transform: translateY(40px);
         opacity: 0;
-        transform: translateY(100px);
         display: none;
     }
 }
+

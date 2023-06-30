@@ -15,7 +15,7 @@ class HomeModel extends Query
 
     public function getById($id)
     {
-        $data = parent::select('SELECT id,CONCAT(nombres," ", apellidos) as persona, descripcion, fecha, estatus FROM  citas where id =' . $id);
+        $data = parent::select('SELECT id,nombres, apellidos, descripcion, fecha, estatus FROM  citas where id =' . $id);
         return $data;
     }
 
@@ -29,7 +29,7 @@ class HomeModel extends Query
 
     public function updateStatus($status, $id)
     {
-        $sql = "UPDATE `citas` SET `estatus` = ? WHERE `citas`.`id` = ?;";
+        $sql = "UPDATE citas SET nombres = :nombres, apellidos = :apellidos , descripcion = :descripcion, fecha = :fecha , estatus = :estatus WHERE citas.id = :id";
         $data = array($status, $id);
         $result = parent::update($sql, $data);
         return $result;

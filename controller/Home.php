@@ -17,12 +17,28 @@ class Home extends Controller
     {
         $listCita = $this->modelo->getAllCitas();
         if (!empty($listCita)) {
-            $res = $listCita;
+            $res = '';
+            for ($i = 0; $i < count($listCita); $i++) {
+                $res .=  '<tr>'
+                    . '<td>' . $listCita[$i]["id"] . '</td>'
+                    . '<td>' . $listCita[$i]["persona"] . '</td>'
+                    . '<td>' . $listCita[$i]["descripcion"] . '</td>'
+                    . '<td>' . $listCita[$i]["fecha"] . '</td>'
+                    . '<td>' . ($listCita[$i]["estatus"] === 0 ? "pendiente" : "completado") . '</td>'
+                    . "<td>
+                          <div class='btn-group' role='group' aria-label='Button group'> <button class='btn_edit' type = 'button'><span class='material-symbols-outlined'>edit</></> <button class='btn_delete' type='button'><span class='material-symbols-outlined'>delete</span></button></div>
+                    </td>"
+                    . '</tr>';
+            }
         } else {
-            $res = array("msg" => "error");
+            $res = "
+                <tbody>
+                    <tr></tr>                
+                </tbody>
+            ";
         }
-        echo json_encode($res, JSON_UNESCAPED_UNICODE);
-        die();
+        echo $res;
+        // print_r($listCita);
     }
 
     public function register()
@@ -47,8 +63,7 @@ class Home extends Controller
         die();
     }
 
-
-    public function findById($id)
+    public function id($id)
     {
         $data = $this->modelo->getById($id);
         if (empty($data)) {
@@ -62,6 +77,8 @@ class Home extends Controller
 
     public function actualizarEstado()
     {
+        if ($_POST) {
+        }
     }
 
     public function remove()
